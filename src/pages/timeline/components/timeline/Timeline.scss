@@ -1,0 +1,20 @@
+@import '../../../../styles/variables';
+
+.timeline {
+  list-style: none;
+  border-right: 2px solid $bag-grey;
+
+  &__grade {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dashed $bag-grey;
+    padding: 10px 0;
+  }
+
+  .books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-rows: minmax(450px, auto);
+    grid-gap: 1em;
+  }
+}
