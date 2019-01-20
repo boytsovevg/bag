@@ -2,22 +2,20 @@ import React, { Component } from 'react';
 import './Timeline.scss';
 
 import { books } from '../../../../data/booksData';
-import { Book } from '../book/Book';
+
+import { Book } from '..';
 
 export class Timeline extends Component {
-
-    componentDidMount() {
-        this.booksList = books.map(book =>
-            <Book {...book}/>
-        );
-    }
 
     render() {
         return (
             <ul className="timeline">
                 <li className="timeline__grade" id="grade">
-                    <div className="books"></div>
-                    {this.booksList}
+                    <div className="books">
+                        {
+                            books.map(book => <Book key={book.author + book.title} {...book}/>)
+                        }
+                    </div>
                 </li>
             </ul>
         )
