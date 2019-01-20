@@ -1,4 +1,4 @@
-import { Grade } from 'grade.enum';
+import { Grade } from './grade.enum';
 
 export const GradeOrder = {
     [Grade.juniorFrontendDeveloper]: 0,
