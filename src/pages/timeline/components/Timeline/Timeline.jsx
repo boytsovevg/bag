@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './Timeline.scss';
 
-import { Book } from '..';
 import { GradeOrder } from '../../../../enums/grade-order.enum';
+
+import { Book } from '..';
 
 export class Timeline extends Component {
 
