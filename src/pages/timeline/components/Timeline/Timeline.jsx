@@ -13,13 +13,16 @@ export class Timeline extends Component {
         const gradesList = Array.from(timeline.keys())
             .sort((previousGrade, currentGrade) => GradeOrder[previousGrade] - GradeOrder[currentGrade])
             .map(grade => (
-                <li className="timeline__grade" id="grade" key={grade}>
+                <li className="timeline__grade" key={grade}>
                     <div className="books">
                         {
                             timeline.has(grade) &&
                             timeline.get(grade)
-                                .map(book => <Book key={book.author + book.title} {...book}/>)
+                                .map(book => <Book key={book.id} {...book}/>)
                         }
+                    </div>
+                    <div className="timeline__grade-name">
+                        { grade }
                     </div>
                 </li>
             ));

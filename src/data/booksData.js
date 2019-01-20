@@ -76,7 +76,7 @@ export const books = [
         title: 'Илон Маск',
         author: 'Эшли Вэнс',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1023964254.jpg',
-        grade: 'FrontendDeveloper',
+        grade: 'TeamLead',
         type: 'Audio',
         duration: ''
     },

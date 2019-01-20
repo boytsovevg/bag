@@ -5,8 +5,6 @@
   border-right: 2px solid $bag-grey;
 
   &__grade {
-    display: flex;
-    flex-direction: column;
     border-bottom: 1px dashed $bag-grey;
     padding: 10px 0;
   }
