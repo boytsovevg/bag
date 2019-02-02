@@ -7,7 +7,7 @@ import { booksStatusesData } from './data/booksStatuses.data';
 import { Timeline } from './pages/timeline';
 import { Header } from './ui/components';
 import { Grade, BookStatus } from './enums';
-import { BookContract, BookStatusInfoContract } from './contracts';
+import { BookContract, BookProgressInfoContract } from './contracts';
 
 export class App extends Component {
     private createTimeline(): Map<Grade, BookContract[]> {
@@ -25,12 +25,12 @@ export class App extends Component {
         }, new Map());
     }
 
-    private getBookStatusesMap(): Map<number, BookStatusInfoContract> {
+    private getBookStatusesMap(): Map<number, BookProgressInfoContract> {
         return booksStatusesData.reduce((statusMap, statusInfo) => {
 
             return statusInfo.status === BookStatus.inProgress &&
             statusMap.set(statusInfo.bookId, statusInfo) || statusMap
-        }, new Map<number, BookStatusInfoContract>());
+        }, new Map<number, BookProgressInfoContract>());
     }
 
     public render() {

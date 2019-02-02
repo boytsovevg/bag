@@ -4,11 +4,11 @@ import './Timeline.scss';
 import { Grade, GradeOrder } from '../../../../enums';
 
 import { Book } from '..';
-import { BookContract, BookStatusInfoContract } from '../../../../contracts';
+import { BookContract, BookProgressInfoContract } from '../../../../contracts';
 
 interface Props {
     timeline: Map<Grade, BookContract[]>;
-    bookStatuses: Map<number, BookStatusInfoContract>
+    bookStatuses: Map<number, BookProgressInfoContract>
 }
 
 export class Timeline extends Component<Props> {
@@ -27,7 +27,7 @@ export class Timeline extends Component<Props> {
                                 .map((book: BookContract) =>
                                     <Book 
                                         key={ book.id }
-                                        inProgress={ !!bookStatuses.get(book.id) }
+                                        progressInfo={ bookStatuses.get(book.id) }
                                         book={ book } 
                                     />
                                 )

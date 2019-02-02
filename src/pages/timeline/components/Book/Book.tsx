@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Book.scss';
 
-import { BookContract } from '../../../../contracts';
+import { BookContract, BookProgressInfoContract } from '../../../../contracts';
 import { BookType } from '../../../../enums';
 
 interface Props {
-    inProgress: boolean;
     book: BookContract;
+    progressInfo?: BookProgressInfoContract;
 }
 
 interface State {
@@ -24,7 +24,8 @@ export class Book extends Component<Props, State> {
     leaveBook = () => this.setState({ mouseEntered: false });
 
     public render() {
-        const { title, author, url, type, duration } = this.props.book;
+        const { book, progressInfo } = this.props;
+        const { title, author, url, type, duration } = book;
 
         return (
             <div className="book"
@@ -49,9 +50,11 @@ export class Book extends Component<Props, State> {
                 </div>
 
                 {
-                    this.state.mouseEntered && this.props.inProgress ?
+                    this.state.mouseEntered && progressInfo ?
                         <div className="book__status">
-                            
+                            <span>{ progressInfo.currentProgress }</span>
+                            /
+                            <span>{ book.duration }</span>
                         </div> :
                         null
                 } 
