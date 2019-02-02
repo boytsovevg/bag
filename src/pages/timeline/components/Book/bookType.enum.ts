@@ -1,4 +1,4 @@
-export const BookType = {
+export interface BookType {
     audio: 'Audio',
     print: 'Print'
-};
+}

@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
 import './Timeline.scss';
 
-import { GradeOrder } from '../../../../enums/grade-order.enum';
+import { Grade, GradeOrder } from '../../../../enums';
 
 import { Book } from '..';
+import { BookContract } from '../../../../contracts';
 
-export class Timeline extends Component {
+interface Props {
+    timeline: Map<Grade, BookContract[]>;
+}
+
+export class Timeline extends Component<Props> {
 
     render() {
         const { timeline } = this.props;
 
         const gradesList = Array.from(timeline.keys())
-            .sort((previousGrade, currentGrade) => GradeOrder[previousGrade] - GradeOrder[currentGrade])
-            .map(grade => (
-                <li className="timeline__grade" key={grade}>
+            .sort((previousGrade: Grade, currentGrade: Grade) => GradeOrder[previousGrade] - GradeOrder[currentGrade])
+            .map((grade: Grade) => (
+                <li className="timeline__grade" key={ grade }>
                     <div className="books">
                         {
                             timeline.has(grade) &&
                             timeline.get(grade)
-                                .map(book => <Book key={book.id} {...book}/>)
+                                .map(book => <Book key={ book.id } { ...book } />)
                         }
                     </div>
                     <div className="timeline__grade-name">
@@ -29,7 +34,7 @@ export class Timeline extends Component {
 
         return (
             <ul className="timeline">
-                {gradesList}
+                { gradesList }
             </ul>
         )
     }
