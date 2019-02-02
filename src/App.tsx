@@ -9,7 +9,22 @@ import { Header } from './ui/components';
 import { Grade, BookStatus } from './enums';
 import { BookContract, BookProgressInfoContract } from './contracts';
 
-export class App extends Component {
+
+interface Props {
+
+}
+
+interface State {
+    timeline: Map<Grade, BookContract[]>;
+    bookStatuses: Map<number, BookProgressInfoContract>;
+}
+
+export class App extends Component<Props, State> {
+    state = {
+        timeline: this.createTimeline(),
+        bookStatuses: this.getBookStatusesMap()
+    };
+
     private createTimeline(): Map<Grade, BookContract[]> {
 
         return books.reduce((gradesMap, book) => {
@@ -40,8 +55,8 @@ export class App extends Component {
                 <Header />
                 <main>
                     <Timeline 
-                        bookStatuses={this.getBookStatusesMap()}
-                        timeline={this.createTimeline()}
+                        bookStatuses={this.state.bookStatuses}
+                        timeline={this.state.timeline}
                     />
                 </main>
             </div>

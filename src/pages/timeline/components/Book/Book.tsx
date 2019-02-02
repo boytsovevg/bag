@@ -17,7 +17,7 @@ export class Book extends Component<Props, State> {
 
     state = {
         mouseEntered: false
-    }
+    };
 
     hoverBook = () => this.setState({ mouseEntered: true });
 

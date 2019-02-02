@@ -1,10 +1,10 @@
-import { BookStatus } from './../enums/bookStatus.enum';
+import { BookStatus } from '../enums';
 
 export const booksStatusesData = [
     {
         bookId: 1,
         status: BookStatus.inProgress,
-        currentProgress: 200
+        currentProgress: 219
     },
     {
         bookId: 2,
@@ -34,7 +34,7 @@ export const booksStatusesData = [
     {
         bookId: 7,
         status: BookStatus.inProgress,
-        currentProgress: 100
+        currentProgress: 200
     },
     {
         bookId: 8,
