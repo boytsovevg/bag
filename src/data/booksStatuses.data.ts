@@ -1,64 +1,64 @@
 import { BookStatus } from './../enums/bookStatus.enum';
 
-export const booksStatuses = [
+export const booksStatusesData = [
     {
-        id: 1,
+        bookId: 1,
         status: BookStatus.inProgress,
-        statusValue: 200
+        currentProgress: 200
     },
     {
-        id: 2,
+        bookId: 2,
         status: BookStatus.complete,
-        statusValue: null
+        currentProgress: null
     },
     {
-        id: 3,
+        bookId: 3,
         status: BookStatus.complete,
-        statusValue: null
+        currentProgress: null
     },
     {
-        id: 4,
+        bookId: 4,
         status: BookStatus.complete,
-        statusValue: null
+        currentProgress: null
     },
     {
-        id: 5,
+        bookId: 5,
         status: BookStatus.complete,
-        statusValue: null
+        currentProgress: null
     },
     {
-        id: 6,
+        bookId: 6,
         status: BookStatus.complete,
-        statusValue: null
+        currentProgress: null
     },
     {
-        id: 7,
+        bookId: 7,
         status: BookStatus.inProgress,
-        statusValue: 100
+        currentProgress: 100
     },
     {
-        id: 8,
+        bookId: 8,
         status: BookStatus.complete,
-        statusValue: null
+        currentProgress: null
     },
     {
-        id: 9,
+        bookId: 9,
         status: BookStatus.complete,
-        statusValue: null
+        currentProgress: null
     },
     {
-        id: 10,
+        bookId: 10,
         status: BookStatus.complete,
-        statusValue: null
+        currentProgress: null
     },
     {
-        id: 11,
+        bookId: 11,
         status: BookStatus.toRead,
-        statusValue: null
+        currentProgress: null
     },
     {
-        id: 12,
+        bookId: 12,
         status: BookStatus.toRead,
-        statusValue: null
+        currentProgress: null
     },
 ];

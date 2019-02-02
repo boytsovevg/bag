@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './App.scss';
 
 import { books } from './data/books.data';
+import { booksStatusesData } from './data/booksStatuses.data';
 
 import { Timeline } from './pages/timeline';
 import { Header } from './ui/components';
-import { Grade } from './enums';
-import { BookContract } from './contracts';
+import { Grade, BookStatus } from './enums';
+import { BookContract, BookStatusInfoContract } from './contracts';
 
 export class App extends Component {
     private createTimeline(): Map<Grade, BookContract[]> {
@@ -24,13 +25,24 @@ export class App extends Component {
         }, new Map());
     }
 
+    private getBookStatusesMap(): Map<number, BookStatusInfoContract> {
+        return booksStatusesData.reduce((statusMap, statusInfo) => {
+
+            return statusInfo.status === BookStatus.inProgress &&
+            statusMap.set(statusInfo.bookId, statusInfo) || statusMap
+        }, new Map<number, BookStatusInfoContract>());
+    }
+
     public render() {
 
         return (
             <div className="App">
                 <Header />
                 <main>
-                    <Timeline timeline={this.createTimeline()}/>
+                    <Timeline 
+                        bookStatuses={this.getBookStatusesMap()}
+                        timeline={this.createTimeline()}
+                    />
                 </main>
             </div>
         );

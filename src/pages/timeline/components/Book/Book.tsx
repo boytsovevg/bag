@@ -5,6 +5,7 @@ import { BookContract } from '../../../../contracts';
 import { BookType } from '../../../../enums';
 
 interface Props {
+    inProgress: boolean;
     book: BookContract;
 }
 
@@ -48,9 +49,9 @@ export class Book extends Component<Props, State> {
                 </div>
 
                 {
-                    this.state.mouseEntered ?
+                    this.state.mouseEntered && this.props.inProgress ?
                         <div className="book__status">
-
+                            
                         </div> :
                         null
                 } 
