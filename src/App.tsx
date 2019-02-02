@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import { books } from './data/booksData';
+import { books } from './data/books.data';
 
 import { Timeline } from './pages/timeline';
 import { Header } from './ui/components';

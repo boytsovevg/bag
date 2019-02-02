@@ -1,3 +1,5 @@
+import { BookType } from './../enums/bookType.enum';
+
 export const books = [
     {
         id: 1,
@@ -5,8 +7,8 @@ export const books = [
         author: 'Максим Батырев',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1022366551.jpg',
         grade: 'TeamLead',
-        type: 'Print',
-        duration: ''
+        type: BookType.print,
+        duration: 304
     },
     {
         id: 2,
@@ -14,8 +16,8 @@ export const books = [
         author: 'Роберт Мартин',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1026061260.jpg',
         grade: 'FrontendDeveloper',
-        type: 'Print',
-        duration: ''
+        type: BookType.print,
+        duration: 352
     },
     {
         id: 3,
@@ -23,8 +25,8 @@ export const books = [
         author: 'Дэн Вальдшмидт',
         url: 'https://avatars.mds.yandex.net/get-marketpic/167558/market_o6vmnSHP15cE0cIyukCwPQ/orig',
         grade: 'TeamLead',
-        type: 'Print',
-        duration: ''
+        type: BookType.print,
+        duration: 208
     },
     {
         id: 4,
@@ -32,8 +34,8 @@ export const books = [
         author: 'Катерина Ленгольд',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1025475624.jpg',
         grade: 'FrontendDeveloper',
-        type: 'Print',
-        duration: ''
+        type: BookType.print,
+        duration: 160
     },
     {
         id: 5,
@@ -41,8 +43,8 @@ export const books = [
         author: 'Джон Сонмез',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1013663461.jpg',
         grade: 'FrontendDeveloper',
-        type: 'Print',
-        duration: ''
+        type: BookType.print,
+        duration: 448
     },
     {
         id: 6,
@@ -50,8 +52,8 @@ export const books = [
         author: 'Барбара Оакли',
         url: 'https://opt-407193.ssl.1c-bitrix-cdn.ru/upload/resize_cache/iblock/915/380_567_1/915bb117e40b154d371c6ddff7a390ef.jpg?153252402453797',
         grade: 'FrontendDeveloper',
-        type: 'Print',
-        duration: ''
+        type: BookType.print,
+        duration: 288
     },
     {
         id: 7,
@@ -59,8 +61,8 @@ export const books = [
         author: 'Егор Бугаенко',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1023618704.jpg',
         grade: 'FrontendDeveloper',
-        type: 'Print',
-        duration: ''
+        type: BookType.print,
+        duration: 240
     },
     {
         id: 8,
@@ -68,8 +70,8 @@ export const books = [
         author: 'Эрнест Клайн',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1007036406.jpg',
         grade: 'FrontendDeveloper',
-        type: 'Audio',
-        duration: ''
+        type: BookType.audio,
+        duration: '13:31:10'
     },
     {
         id: 9,
@@ -77,8 +79,8 @@ export const books = [
         author: 'Эшли Вэнс',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1023964254.jpg',
         grade: 'TeamLead',
-        type: 'Audio',
-        duration: ''
+        type: BookType.audio,
+        duration: '14:12:58'
     },
     {
         id: 10,
@@ -86,16 +88,25 @@ export const books = [
         author: 'Дино Эспозито, Андреа Сальтарелло',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1013942325.jpg',
         grade: 'FrontendDeveloper',
-        type: 'Print',
-        duration: ''
+        type: BookType.print,
+        duration: 432
     },
     {
         id: 11,
-        title: 'ES6 и не только',
-        author: 'Кайл Симпсон',
-        url: 'https://ozon-st.cdn.ngenix.net/multimedia/1025316892.jpg',
-        grade: 'JuniorFrontendDeveloper',
-        type: 'Print',
-        duration: ''
+        title: 'Scrum. Революционный метод управления проектами',
+        author: 'Джефф Сазерленд',
+        url: 'https://ozon-st.cdn.ngenix.net/multimedia/1019253785.jpg',
+        grade: 'TeamLead',
+        type: BookType.print,
+        duration: 288
     },
+    {
+        id: 12,
+        title: 'Как привести дела в порядок. Искусство продуктивности без стресса',
+        author: 'Дэвид Аллен',
+        url: 'https://www.mann-ivanov-ferber.ru/assets/images/covers/97/16097/1.00x-thumb.png',
+        grade: 'TeamLead',
+        type: BookType.print,
+        duration: 416
+    }
 ];
