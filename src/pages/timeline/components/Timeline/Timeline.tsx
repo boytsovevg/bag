@@ -23,7 +23,7 @@ export class Timeline extends Component<Props> {
                         {
                             timeline.has(grade) &&
                             timeline.get(grade)
-                                .map(book => <Book key={ book.id } { ...book } />)
+                                .map((book: BookContract) => <Book key={ book.id } book={ book } />)
                         }
                     </div>
                     <div className="timeline__grade-name">

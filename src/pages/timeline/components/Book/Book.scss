@@ -1,13 +1,26 @@
 .book {
 
+  position: relative;
+
   &__image {
     width: 350px;
     height: 450px;
     border-radius: 3px;
-    background-color: crimson;
+    background-color: #2E8B57;
   }
 
   &__info {
     margin-left: 5px;
+  }
+
+  &__status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 450px;
+    border-radius: 3px;
+    background-color: #333;
+    opacity: .9;
   }
 }
