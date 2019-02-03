@@ -53,11 +53,21 @@ export const booksStatusesData = [
     },
     {
         bookId: 11,
+        status: BookStatus.inProgress,
+        currentProgress: 43
+    },
+    {
+        bookId: 12,
+        status: BookStatus.inProgress,
+        currentProgress: 41
+    },
+    {
+        bookId: 13,
         status: BookStatus.toRead,
         currentProgress: 0
     },
     {
-        bookId: 12,
+        bookId: 14,
         status: BookStatus.toRead,
         currentProgress: 0
     },

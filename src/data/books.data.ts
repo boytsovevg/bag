@@ -93,6 +93,24 @@ export const books = [
     },
     {
         id: 11,
+        title: 'Принцип пирамиды Минто. Золотые правила мышления, делового письма и устных выступлений',
+        author: 'Барбара Минто',
+        url: 'https://ozon-st.cdn.ngenix.net/multimedia/1021964317.jpg',
+        grade: Grade.teamLead,
+        type: BookType.print,
+        duration: 272
+    },
+    {
+        id: 12,
+        title: 'Философия DevOps. Искусство управления IT',
+        author: 'Дженнифер Дэвис, Кэтрин Дэниелс',
+        url: 'https://ozon-st.cdn.ngenix.net/multimedia/1018202803.jpg',
+        grade: Grade.teamLead,
+        type: BookType.print,
+        duration: 416
+    },
+    {
+        id: 13,
         title: 'Scrum. Революционный метод управления проектами',
         author: 'Джефф Сазерленд',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1019253785.jpg',
@@ -101,12 +119,12 @@ export const books = [
         duration: 288
     },
     {
-        id: 12,
+        id: 14,
         title: 'Как привести дела в порядок. Искусство продуктивности без стресса',
         author: 'Дэвид Аллен',
         url: 'https://www.mann-ivanov-ferber.ru/assets/images/covers/97/16097/1.00x-thumb.png',
         grade: Grade.teamLead,
         type: BookType.print,
         duration: 416
-    }
+    },
 ];

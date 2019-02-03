@@ -2,10 +2,22 @@
 
   position: relative;
 
-  &__image {
+  &__image-container {
+    position: relative;
     width: 350px;
     height: 450px;
+  }
+
+  &__image {
     border-radius: 3px;
+  }
+
+  &__progress {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 450px;
+    filter: blur(.3px);
   }
 
   &__info {
@@ -15,14 +27,6 @@
   &_shadowed {
     opacity: .9;
     background-color: #333;
-  }
-
-  &__progress {
-    position: absolute;
-    top: 0;
-    right: 32.5px;
-    height: 450px;
-    filter: blur(.3px);
   }
 
   &__status {

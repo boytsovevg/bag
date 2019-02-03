@@ -65,11 +65,23 @@ export class Book extends Component<Props, State> {
                 onMouseEnter={ this.hoverBook }
                 onMouseLeave={ this.leaveBook }
             >
-                <img className="book__image"
-                     src={url}
-                     alt={title}
-                />
-
+                <div className="book__image-container">
+                    <img className="book__image"
+                            width="350"
+                            height="450"
+                            src={url}
+                            alt={title}
+                        />
+                    {
+                        progressInfo && String(book.type) === BookType.print ?
+                            <div className="book__progress book_shadowed"
+                                    style={{width: this.getProgressWidth(book, progressInfo) }}
+                            >
+                            </div> :
+                            null
+                    }
+                </div>
+                    
                 <div className="book__info">
                     <div>{title}</div>
                     <div>{author}</div>
@@ -82,14 +94,6 @@ export class Book extends Component<Props, State> {
                         <span>{ duration }</span>
                     </div>
                 </div>
-                {
-                    progressInfo && String(book.type) === BookType.print ?
-                        <div className="book__progress book_shadowed"
-                             style={{width: this.getProgressWidth(book, progressInfo) }}
-                        >
-                        </div> :
-                        null
-                }
 
                 {
                     this.state.mouseEntered && progressInfo ?
@@ -102,8 +106,8 @@ export class Book extends Component<Props, State> {
                             </div>
 
                             <input onBlur={(event: FocusEvent<HTMLInputElement>) => this.updateProgress(event.target.value)}
-                                   onKeyUp={this.acceptProgress}
-                                   type="text"
+                                    onKeyUp={this.acceptProgress}
+                                    type="text"
                             />
 
                         </div> :
