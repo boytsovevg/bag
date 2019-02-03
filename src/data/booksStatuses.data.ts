@@ -54,11 +54,11 @@ export const booksStatusesData = [
     {
         bookId: 11,
         status: BookStatus.toRead,
-        currentProgress: null
+        currentProgress: 0
     },
     {
         bookId: 12,
         status: BookStatus.toRead,
-        currentProgress: null
+        currentProgress: 0
     },
 ];

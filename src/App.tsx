@@ -43,7 +43,7 @@ export class App extends Component<Props, State> {
     private getBookStatusesMap(): Map<number, BookProgressInfoContract> {
         return booksStatusesData.reduce((statusMap, statusInfo) => {
 
-            return statusInfo.status === BookStatus.inProgress &&
+            return statusInfo.status !== BookStatus.complete &&
             statusMap.set(statusInfo.bookId, statusInfo) || statusMap
         }, new Map<number, BookProgressInfoContract>());
     }

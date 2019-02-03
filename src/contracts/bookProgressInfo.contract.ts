@@ -1,7 +1,7 @@
-import { BookStatus } from '../enums/bookStatus.enum';
+import { BookStatus } from '../enums';
 
 export interface BookProgressInfoContract {
     bookId: number;
     status: BookStatus;
-    currentProgress?: number | string;
+    currentProgress?: number;
 }
