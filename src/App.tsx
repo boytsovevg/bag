@@ -25,7 +25,7 @@ export class App extends Component<Props, State> {
         bookStatuses: this.getBookStatusesMap(booksStatusesData)
     };
 
-    updateBookProgress = (id: number, progress: number): void => {
+    updateBookProgress = (id: number, progress: BookProgressInfoContract): void => {
 
 
         this.setState((previousState: State) => {
@@ -39,7 +39,7 @@ export class App extends Component<Props, State> {
                     ...bookStatuses,
                     {
                         ...bookStatus,
-                        currentProgress: progress
+                        ...progress
                     }
                 ])
             })

@@ -2,12 +2,12 @@ import React, { KeyboardEvent, FocusEvent, Component } from 'react';
 import './Book.scss';
 
 import { BookContract, BookProgressInfoContract } from '../../../../contracts';
-import { BookType } from '../../../../enums';
+import { BookStatus, BookType } from '../../../../enums';
 
 interface Props {
     book: BookContract;
     progressInfo?: BookProgressInfoContract;
-    updateCurrentProgress: (value: number) => void;
+    updateCurrentProgress: (value: BookProgressInfoContract) => void;
 }
 
 interface State {
@@ -31,12 +31,23 @@ export class Book extends Component<Props, State> {
     updateProgress = (value: string) => {
         const pageNumber = parseInt(value, 10);
 
-        const progress = isNaN(pageNumber) ? 0 :
-            pageNumber > this.props.book.duration ?
-                this.props.book.duration :
-                pageNumber;
+        if (!isNaN(pageNumber)) {
 
-        this.props.updateCurrentProgress(progress);
+            const { book, progressInfo } = this.props;
+
+            const progress = pageNumber >= book.duration ?
+                {
+                    ...progressInfo,
+                    status: BookStatus.complete,
+                    currentProgress: book.duration
+                } :
+                {
+                    ...progressInfo,
+                    currentProgress: pageNumber
+                };
+
+            this.props.updateCurrentProgress(progress);
+        }
     };
 
     acceptProgress = (event: KeyboardEvent<HTMLInputElement>) => {
