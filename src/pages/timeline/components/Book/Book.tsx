@@ -39,7 +39,7 @@ export class Book extends Component<Props, State> {
                 {
                     ...progressInfo,
                     status: BookStatus.complete,
-                    currentProgress: book.duration
+                    currentProgress: book.duration as number
                 } :
                 {
                     ...progressInfo,

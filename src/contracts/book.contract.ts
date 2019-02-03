@@ -8,5 +8,5 @@ export interface BookContract {
     url: string,
     grade: Grade,
     type: BookType,
-    duration: number;
+    duration: number | string;
 }

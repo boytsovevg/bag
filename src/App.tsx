@@ -4,14 +4,14 @@ import './App.scss';
 import { books } from './data/books.data';
 import { booksStatusesData } from './data/booksStatuses.data';
 
-import { Timeline } from './pages/timeline';
-import { Header } from './ui/components';
 import { Grade, BookStatus } from './enums';
 import { BookContract, BookProgressInfoContract } from './contracts';
 
+import { Timeline } from './pages/timeline';
+import { Header } from './ui/components';
+
 
 interface Props {
-
 }
 
 interface State {
