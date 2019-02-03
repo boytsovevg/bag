@@ -1,3 +1,5 @@
+@import '../../../../styles/variables';
+
 .book {
 
   position: relative;
@@ -26,7 +28,7 @@
 
   &_shadowed {
     opacity: .9;
-    background-color: #333;
+    background-color: $bag-black;
   }
 
   &__status {

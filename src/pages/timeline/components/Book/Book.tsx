@@ -73,7 +73,7 @@ export class Book extends Component<Props, State> {
                             alt={title}
                         />
                     {
-                        progressInfo && String(book.type) === BookType.print ?
+                        progressInfo && String(type) === BookType.print ?
                             <div className="book__progress book_shadowed"
                                     style={{width: this.getProgressWidth(book, progressInfo) }}
                             >
@@ -107,7 +107,7 @@ export class Book extends Component<Props, State> {
 
                             <input onBlur={(event: FocusEvent<HTMLInputElement>) => this.updateProgress(event.target.value)}
                                     onKeyUp={this.acceptProgress}
-                                    type="text"
+                                    type="number"
                             />
 
                         </div> :
