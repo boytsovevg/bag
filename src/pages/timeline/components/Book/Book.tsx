@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { KeyboardEvent, FocusEvent, Component } from 'react';
 import './Book.scss';
 
 import { BookContract, BookProgressInfoContract } from '../../../../contracts';
@@ -7,6 +7,7 @@ import { BookType } from '../../../../enums';
 interface Props {
     book: BookContract;
     progressInfo?: BookProgressInfoContract;
+    updateCurrentProgress: (value: number) => void;
 }
 
 interface State {
@@ -25,6 +26,23 @@ export class Book extends Component<Props, State> {
 
     getProgressWidth(book: BookContract, progressInfo: BookProgressInfoContract): number {
         return 350 - 350 * progressInfo.currentProgress / Number(book.duration);
+    };
+
+    updateProgress = (value: string) => {
+        const pageNumber = parseInt(value, 10);
+
+        const progress = isNaN(pageNumber) ? 0 :
+            pageNumber > this.props.book.duration ?
+                this.props.book.duration :
+                pageNumber;
+
+        this.props.updateCurrentProgress(progress);
+    };
+
+    acceptProgress = (event: KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            this.updateProgress(event.currentTarget.value);
+        }
     };
 
     public render() {
@@ -65,9 +83,18 @@ export class Book extends Component<Props, State> {
                 {
                     this.state.mouseEntered && progressInfo ?
                         <div className="book__status book_shadowed">
-                            <span>{ progressInfo.currentProgress }</span>
-                            /
-                            <span>{ book.duration }</span>
+
+                            <div>
+                                <span>{ progressInfo.currentProgress }</span>
+                                /
+                                <span>{ book.duration }</span>
+                            </div>
+
+                            <input onBlur={(event: FocusEvent<HTMLInputElement>) => this.updateProgress(event.target.value)}
+                                   onKeyUp={this.acceptProgress}
+                                   type="text"
+                            />
+
                         </div> :
                         null
                 } 

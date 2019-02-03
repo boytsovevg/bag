@@ -22,7 +22,22 @@ interface State {
 export class App extends Component<Props, State> {
     state = {
         timeline: this.createTimeline(),
-        bookStatuses: this.getBookStatusesMap()
+        bookStatuses: this.getBookStatusesMap(booksStatusesData)
+    };
+
+    updateBookProgress = (id: number, progress: number): void => {
+        const bookStatus = booksStatusesData.find(status => status.bookId === id);
+        const bookStatuses = booksStatusesData.filter(status => status.bookId !== id);
+
+        this.setState({
+            bookStatuses: this.getBookStatusesMap([
+                ...bookStatuses,
+                {
+                    ...bookStatus,
+                    currentProgress: progress
+                }
+            ])
+        })
     };
 
     private createTimeline(): Map<Grade, BookContract[]> {
@@ -40,7 +55,7 @@ export class App extends Component<Props, State> {
         }, new Map());
     }
 
-    private getBookStatusesMap(): Map<number, BookProgressInfoContract> {
+    private getBookStatusesMap(booksStatusesData: BookProgressInfoContract[]): Map<number, BookProgressInfoContract> {
         return booksStatusesData.reduce((statusMap, statusInfo) => {
 
             return statusInfo.status !== BookStatus.complete &&
@@ -54,9 +69,10 @@ export class App extends Component<Props, State> {
             <div className="App">
                 <Header />
                 <main>
-                    <Timeline 
+                    <Timeline
                         bookStatuses={this.state.bookStatuses}
                         timeline={this.state.timeline}
+                        updateBookProgress={this.updateBookProgress}
                     />
                 </main>
             </div>

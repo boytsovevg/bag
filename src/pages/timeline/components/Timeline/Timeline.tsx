@@ -8,7 +8,8 @@ import { BookContract, BookProgressInfoContract } from '../../../../contracts';
 
 interface Props {
     timeline: Map<Grade, BookContract[]>;
-    bookStatuses: Map<number, BookProgressInfoContract>
+    bookStatuses: Map<number, BookProgressInfoContract>;
+    updateBookProgress: (bookId: number, progress: number) => void;
 }
 
 export class Timeline extends Component<Props> {
@@ -28,6 +29,7 @@ export class Timeline extends Component<Props> {
                                     <Book 
                                         key={ book.id }
                                         progressInfo={ bookStatuses.get(book.id) }
+                                        updateCurrentProgress={(currentProgress) => this.props.updateBookProgress(book.id, currentProgress)}
                                         book={ book } 
                                     />
                                 )
