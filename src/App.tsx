@@ -26,17 +26,23 @@ export class App extends Component<Props, State> {
     };
 
     updateBookProgress = (id: number, progress: number): void => {
-        const bookStatus = booksStatusesData.find(status => status.bookId === id);
-        const bookStatuses = booksStatusesData.filter(status => status.bookId !== id);
 
-        this.setState({
-            bookStatuses: this.getBookStatusesMap([
-                ...bookStatuses,
-                {
-                    ...bookStatus,
-                    currentProgress: progress
-                }
-            ])
+
+        this.setState((previousState: State) => {
+            const stateBooksStatuses = Array.from(previousState.bookStatuses.values());
+
+            const bookStatus = stateBooksStatuses.find(status => status.bookId === id);
+            const bookStatuses = stateBooksStatuses.filter(status => status.bookId !== id);
+
+            return ({
+                bookStatuses: this.getBookStatusesMap([
+                    ...bookStatuses,
+                    {
+                        ...bookStatus,
+                        currentProgress: progress
+                    }
+                ])
+            })
         })
     };
 
