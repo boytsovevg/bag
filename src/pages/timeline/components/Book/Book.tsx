@@ -25,7 +25,7 @@ export class Book extends Component<Props, State> {
     leaveBook = () => this.setState({ mouseEntered: false });
 
     getProgressWidth(book: BookContract, progressInfo: BookProgressInfoContract): number {
-        return 350 - 350 * progressInfo.currentProgress / Number(book.duration);
+        return 270 - 270 * progressInfo.currentProgress / Number(book.duration);
     };
 
     updateProgress = (value: string) => {
@@ -67,8 +67,8 @@ export class Book extends Component<Props, State> {
             >
                 <div className="book__image-container">
                     <img className="book__image"
-                            width="350"
-                            height="450"
+                            width="270"
+                            height="400"
                             src={url}
                             alt={title}
                         />

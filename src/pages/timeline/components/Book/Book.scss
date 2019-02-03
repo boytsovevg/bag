@@ -4,8 +4,8 @@
 
   &__image-container {
     position: relative;
-    width: 350px;
-    height: 450px;
+    width: 270px;
+    height: 400px;
   }
 
   &__image {
@@ -16,7 +16,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: 450px;
+    height: 400px;
     filter: blur(.3px);
   }
 
@@ -37,8 +37,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 350px;
-    height: 450px;
+    width: 270px;
+    height: 400px;
 
     input {
       margin-top: 10px;
