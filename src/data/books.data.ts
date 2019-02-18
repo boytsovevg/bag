@@ -8,7 +8,7 @@ export const books = [
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1022366551.jpg',
         grade: Grade.teamLead,
         type: BookType.print,
-        duration: 304
+        pagesNumber: 304
     },
     {
         id: 2,
@@ -17,16 +17,16 @@ export const books = [
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1026061260.jpg',
         grade: Grade.frontendDeveloper,
         type: BookType.print,
-        duration: 352
+        pagesNumber: 352
     },
     {
         id: 3,
         title: 'Будь лучшей версией себя',
         author: 'Дэн Вальдшмидт',
-        url: 'https://avatars.mds.yandex.net/get-marketpic/167558/market_o6vmnSHP15cE0cIyukCwPQ/orig',
+        url: 'https://ozon-st.cdn.ngenix.net/multimedia/1025400937.jpg',
         grade: Grade.teamLead,
         type: BookType.print,
-        duration: 208
+        pagesNumber: 208
     },
     {
         id: 4,
@@ -35,7 +35,7 @@ export const books = [
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1025475624.jpg',
         grade: Grade.frontendDeveloper,
         type: BookType.print,
-        duration: 160
+        pagesNumber: 160
     },
     {
         id: 5,
@@ -44,7 +44,7 @@ export const books = [
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1013663461.jpg',
         grade: Grade.frontendDeveloper,
         type: BookType.print,
-        duration: 448
+        pagesNumber: 448
     },
     {
         id: 6,
@@ -53,7 +53,7 @@ export const books = [
         url: 'https://opt-407193.ssl.1c-bitrix-cdn.ru/upload/resize_cache/iblock/915/380_567_1/915bb117e40b154d371c6ddff7a390ef.jpg?153252402453797',
         grade: Grade.frontendDeveloper,
         type: BookType.print,
-        duration: 288
+        pagesNumber: 288
     },
     {
         id: 7,
@@ -62,16 +62,7 @@ export const books = [
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1023618704.jpg',
         grade: Grade.frontendDeveloper,
         type: BookType.print,
-        duration: 240
-    },
-    {
-        id: 8,
-        title: 'Первому игроку приготовиться',
-        author: 'Эрнест Клайн',
-        url: 'https://ozon-st.cdn.ngenix.net/multimedia/1007036406.jpg',
-        grade: Grade.frontendDeveloper,
-        type: BookType.audio,
-        duration: '13:31:10'
+        pagesNumber: 240
     },
     {
         id: 9,
@@ -79,8 +70,8 @@ export const books = [
         author: 'Эшли Вэнс',
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1023964254.jpg',
         grade: Grade.teamLead,
-        type: BookType.audio,
-        duration: '14:12:58'
+        type: BookType.print,
+        pagesNumber: 416
     },
     {
         id: 10,
@@ -89,7 +80,7 @@ export const books = [
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1013942325.jpg',
         grade: Grade.frontendDeveloper,
         type: BookType.print,
-        duration: 432
+        pagesNumber: 432
     },
     {
         id: 11,
@@ -98,16 +89,7 @@ export const books = [
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1021964317.jpg',
         grade: Grade.teamLead,
         type: BookType.print,
-        duration: 272
-    },
-    {
-        id: 12,
-        title: 'Философия DevOps. Искусство управления IT',
-        author: 'Дженнифер Дэвис, Кэтрин Дэниелс',
-        url: 'https://ozon-st.cdn.ngenix.net/multimedia/1018202803.jpg',
-        grade: Grade.teamLead,
-        type: BookType.print,
-        duration: 416
+        pagesNumber: 272
     },
     {
         id: 13,
@@ -116,7 +98,7 @@ export const books = [
         url: 'https://ozon-st.cdn.ngenix.net/multimedia/1019253785.jpg',
         grade: Grade.teamLead,
         type: BookType.print,
-        duration: 288
+        pagesNumber: 288
     },
     {
         id: 14,
@@ -125,6 +107,6 @@ export const books = [
         url: 'https://www.mann-ivanov-ferber.ru/assets/images/covers/97/16097/1.00x-thumb.png',
         grade: Grade.teamLead,
         type: BookType.print,
-        duration: 416
+        pagesNumber: 416
     },
 ];

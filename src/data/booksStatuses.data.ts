@@ -37,11 +37,6 @@ export const booksStatusesData = [
         currentProgress: 200
     },
     {
-        bookId: 8,
-        status: BookStatus.complete,
-        currentProgress: null
-    },
-    {
         bookId: 9,
         status: BookStatus.complete,
         currentProgress: null
@@ -55,11 +50,6 @@ export const booksStatusesData = [
         bookId: 11,
         status: BookStatus.inProgress,
         currentProgress: 43
-    },
-    {
-        bookId: 12,
-        status: BookStatus.inProgress,
-        currentProgress: 41
     },
     {
         bookId: 13,

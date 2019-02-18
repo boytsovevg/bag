@@ -25,7 +25,7 @@ export class Book extends Component<Props, State> {
     leaveBook = () => this.setState({ mouseEntered: false });
 
     getProgressWidth(book: BookContract, progressInfo: BookProgressInfoContract): number {
-        return 270 - 270 * progressInfo.currentProgress / Number(book.duration);
+        return 270 - 270 * progressInfo.currentProgress / book.pagesNumber;
     };
 
     updateProgress = (value: string) => {
@@ -35,11 +35,11 @@ export class Book extends Component<Props, State> {
 
             const { book, progressInfo } = this.props;
 
-            const progress = pageNumber >= book.duration ?
+            const progress = pageNumber >= book.pagesNumber ?
                 {
                     ...progressInfo,
                     status: BookStatus.complete,
-                    currentProgress: book.duration as number
+                    currentProgress: book.pagesNumber
                 } :
                 {
                     ...progressInfo,
@@ -58,7 +58,7 @@ export class Book extends Component<Props, State> {
 
     public render() {
         const { book, progressInfo } = this.props;
-        const { title, author, url, type, duration } = book;
+        const { title, author, url, type, pagesNumber } = book;
 
         return (
             <div className="book"
@@ -86,12 +86,8 @@ export class Book extends Component<Props, State> {
                     <div>{title}</div>
                     <div>{author}</div>
                     <div>
-                        {
-                            String(type) === BookType.print ?
-                            <span>Количество страниц: </span> :
-                            <span>Продолжительность: </span>
-                        }
-                        <span>{ duration }</span>
+                        <span>Количество страниц: </span>
+                        <span>{ pagesNumber }</span>
                     </div>
                 </div>
 
@@ -102,7 +98,7 @@ export class Book extends Component<Props, State> {
                             <div>
                                 <span>{ progressInfo.currentProgress }</span>
                                 /
-                                <span>{ book.duration }</span>
+                                <span>{ book.pagesNumber }</span>
                             </div>
 
                             <input onBlur={(event: FocusEvent<HTMLInputElement>) => this.updateProgress(event.target.value)}
