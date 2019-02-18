@@ -2,7 +2,7 @@ import React, { KeyboardEvent, FocusEvent, Component } from 'react';
 import './Book.scss';
 
 import { BookContract, BookProgressInfoContract } from '../../../../contracts';
-import { BookStatus, BookType } from '../../../../enums';
+import { BookStatus } from '../../../../enums';
 
 interface Props {
     book: BookContract;
@@ -58,7 +58,7 @@ export class Book extends Component<Props, State> {
 
     public render() {
         const { book, progressInfo } = this.props;
-        const { title, author, url, type, pagesNumber } = book;
+        const { title, author, url, pagesNumber } = book;
 
         return (
             <div className="book"
@@ -73,7 +73,7 @@ export class Book extends Component<Props, State> {
                             alt={title}
                         />
                     {
-                        progressInfo && String(type) === BookType.print ?
+                        progressInfo ?
                             <div className="book__progress book_shadowed"
                                     style={{width: this.getProgressWidth(book, progressInfo) }}
                             >

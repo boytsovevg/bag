@@ -14,6 +14,10 @@ interface Props {
 
 export class Timeline extends Component<Props> {
 
+    public updateProgress(id: number, progress: BookProgressInfoContract): void {
+        this.props.updateBookProgress(id, progress);
+    }
+
     render() {
         const { timeline, bookStatuses } = this.props;
 
@@ -29,7 +33,7 @@ export class Timeline extends Component<Props> {
                                     <Book 
                                         key={ book.id }
                                         progressInfo={ bookStatuses.get(book.id) }
-                                        updateCurrentProgress={(currentProgress) => this.props.updateBookProgress(book.id, currentProgress)}
+                                        updateCurrentProgress={(currentProgress) => this.updateProgress(book.id, currentProgress)}
                                         book={ book } 
                                     />
                                 )

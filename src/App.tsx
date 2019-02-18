@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import { books } from './data/books.data';
+import axios from 'axios';
+
 import { booksStatusesData } from './data/booksStatuses.data';
 
 import { Grade, BookStatus } from './enums';
@@ -21,9 +22,16 @@ interface State {
 
 export class App extends Component<Props, State> {
     state = {
-        timeline: this.createTimeline(),
-        bookStatuses: this.getBookStatusesMap(booksStatusesData)
+        timeline: new Map(),
+        bookStatuses: new Map()
     };
+
+    async componentDidMount(): Promise<void> {
+        const timeline = await this.createTimeline();
+        const bookStatuses = this.getBookStatusesMap(booksStatusesData);
+
+        this.setState({ timeline, bookStatuses })
+    }
 
     updateBookProgress = (id: number, progress: BookProgressInfoContract): void => {
 
@@ -46,7 +54,15 @@ export class App extends Component<Props, State> {
         })
     };
 
-    private createTimeline(): Map<Grade, BookContract[]> {
+    private async getBooks(): Promise<BookContract[]> {
+        const booksResponse = await axios.get('api/books');
+
+        return booksResponse.data;
+    }
+
+    private async createTimeline(): Promise<Map<Grade, BookContract[]>> {
+
+        const books = await this.getBooks();
 
         return books.reduce((gradesMap, book) => {
 
